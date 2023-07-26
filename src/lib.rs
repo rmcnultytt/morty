@@ -312,6 +312,7 @@ pub fn do_pickle<'a>(
         }
         write!(out, "{}", &pf.source[pos..]).unwrap();
         // Make sure that each file ends with a newline.
+        writeln!(out, "EOF: " + &pf.path);
         if !pf.source.ends_with('\n') {
             writeln!(out).unwrap();
         }
